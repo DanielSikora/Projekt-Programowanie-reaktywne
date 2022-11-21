@@ -1,25 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Navbar bg="dark" variant="dark">
+                <Container fluid>
+                    <Navbar.Brand href="#home">BazaFilmów</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="navbarScroll"/>
+                    <Navbar.Collapse id="navbarScroll">
+                        <Nav
+                            className="nav navbar-nav navbar-left"
+                            style={{maxHeight: '100px'}}
+                            navbarScroll
+                        >
+                            <Nav.Link href="#home">Strona główna</Nav.Link>
+                        </Nav>
+                        <Nav
+                            className="mx-auto order-0"
+                            style={{maxHeight: '100px'}}
+                            navbarScroll
+                        >
+                            <Form className="d-flex">
+                                <Form.Control
+                                    type="search"
+                                    placeholder="Szukaj"
+                                    className="mx-auto order-0"
+                                    aria-label="Szukaj"
+                                />
+                                <Button variant="outline-success">Szukaj</Button>
+                            </Form>
+                        </Nav>
+                        <Nav
+                            className="nav navbar-nav navbar-right"
+                            style={{maxHeight: '100px'}}
+                            navbarScroll
+                        >
+                            <Nav.Link href="#login">Logowanie</Nav.Link>
+                            <Nav.Link href="#signin">Rejestracja</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </>
+    );
 }
 
 export default App;
