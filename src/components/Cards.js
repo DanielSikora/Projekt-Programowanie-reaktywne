@@ -15,7 +15,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '18rem' }}>
@@ -25,7 +25,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '18rem' }}>
@@ -35,7 +35,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '18rem' }}>
@@ -45,7 +45,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '18rem' }}>
@@ -55,7 +55,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                 </CardGroup>
@@ -67,7 +67,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '18rem' }}>
@@ -77,7 +77,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '18rem' }}>
@@ -87,7 +87,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '18rem' }}>
@@ -97,7 +97,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '18rem' }}>
@@ -107,7 +107,7 @@ function Cards() {
                             <Card.Text>
                                 He is The Batman
                             </Card.Text>
-                            <Button variant="primary">Strona filmu</Button>
+                            <Button variant="primary" href="/details">Strona filmu</Button>
                         </Card.Body>
                     </Card>
                 </CardGroup>

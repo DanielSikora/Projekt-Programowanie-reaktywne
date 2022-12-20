@@ -4,17 +4,13 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import {CardGroup} from "react-bootstrap";
-
-
 function NavBarComponent() {
     return (
         <>
             <div>
                 <Navbar bg="dark" variant="dark">
                     <Container fluid>
-                        <Navbar.Brand href="#home">BazaFilmów</Navbar.Brand>
+                        <Navbar.Brand href="/">BazaFilmów</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll"/>
                         <Navbar.Collapse id="navbarScroll">
                             <Nav
@@ -22,7 +18,8 @@ function NavBarComponent() {
                                 style={{maxHeight: '100px'}}
                                 navbarScroll
                             >
-                                <Nav.Link href="#home">Strona główna</Nav.Link>
+                                <Nav.Link href="/">Strona główna</Nav.Link>
+                                <Nav.Link href="/add">Dodaj film</Nav.Link>
                             </Nav>
                             <Nav
                                 className="mx-auto order-0"
@@ -44,8 +41,9 @@ function NavBarComponent() {
                                 style={{maxHeight: '100px'}}
                                 navbarScroll
                             >
-                                <Nav.Link href="#login">Logowanie</Nav.Link>
-                                <Nav.Link href="#signin">Rejestracja</Nav.Link>
+                                <Nav.Link href="/signin">Logowanie</Nav.Link>
+                                <Nav.Link href="/signup">Rejestracja</Nav.Link>
+
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

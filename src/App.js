@@ -1,26 +1,23 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import {CardGroup} from "react-bootstrap";
-import Cards from "./components/Cards";
-import Footer from "./components/Footer";
-import NavBarComponent from "./components/NavBarComponent";
-
+import {Route, Routes} from "react-router-dom";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import Register from "./components/Register";
+import AddFilm from "./components/AddFilm";
+import React from "react";
+import Details from "./components/Details";
 function App() {
     return (
         <>
-            <NavBarComponent></NavBarComponent>
-
-            <Cards></Cards>
-
-            <Footer></Footer>
+            <Routes>
+                <Route path="/" element={<Home/>}></Route>
+                <Route path="/signin" element={<Login/>}></Route>
+                <Route path="/signup" element={<Register/>}></Route>
+                <Route path="/add" element={<AddFilm/>}></Route>
+                <Route path="/details" element={<Details/>}></Route>
+            </Routes>
         </>
     );
 }
-
 export default App;
