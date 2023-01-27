@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     MDBBtn,
     MDBContainer,
@@ -12,7 +12,19 @@ import {
 }
     from 'mdb-react-ui-kit';
 import NavBarComponent from "./NavBarComponent";
+import {useNavigate} from "react-router-dom";
+import axios from "axios";
+import Footer from "./Footer";
 function Register() {
+    const navigate = useNavigate()
+    const [login,setLogin]= useState("")
+    const [password,setPassword]= useState("")
+    const [email,setEmail]= useState("")
+    const signUp = ()=>{
+        axios.post('https://at.usermd.net/api/user/create',{name:login,password:password,email:email})
+            .then((restore)=>{navigate("/signin")})
+    }
+
     return (
         <div>
             <NavBarComponent></NavBarComponent>
@@ -23,29 +35,25 @@ function Register() {
                     <MDBRow>
                         <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
 
-                            <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                            <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" >Sign up</p>
 
                             <div className="d-flex flex-row align-items-center mb-4 ">
                                 <MDBIcon fas icon="user me-3" size='lg'/>
-                                <MDBInput label='Your Name' id='form1' type='text' className='w-100'/>
+                                <MDBInput label='Your Name' id='form1' type='text' className='w-100' value={login} onChange={e => setLogin(e.target.value)}/>
                             </div>
 
                             <div className="d-flex flex-row align-items-center mb-4">
                                 <MDBIcon fas icon="envelope me-3" size='lg'/>
-                                <MDBInput label='Your Email' id='form2' type='email'/>
+                                <MDBInput label='Your Email' id='form2' type='email' value={email} onChange={e => setEmail(e.target.value)}/>
                             </div>
 
                             <div className="d-flex flex-row align-items-center mb-4">
                                 <MDBIcon fas icon="lock me-3" size='lg'/>
-                                <MDBInput label='Password' id='form3' type='password'/>
+                                <MDBInput label='Password' id='form3' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
                             </div>
 
-                            <div className="d-flex flex-row align-items-center mb-4">
-                                <MDBIcon fas icon="key me-3" size='lg'/>
-                                <MDBInput label='Repeat your password' id='form4' type='password'/>
-                            </div>
 
-                            <MDBBtn className='mb-4' size='lg'>Register</MDBBtn>
+                            <MDBBtn className="mb-4" onClick={()=>{signUp()}}>Zarejestruj</MDBBtn>
 
                         </MDBCol>
                         <MDBCol md='10' lg='6' className='order-1 order-lg-2 d-flex align-items-center'>
@@ -56,6 +64,7 @@ function Register() {
             </MDBCard>
 
         </MDBContainer>
+            <Footer></Footer>
         </div>
     );
 }

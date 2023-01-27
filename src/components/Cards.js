@@ -2,118 +2,24 @@ import Card from 'react-bootstrap/Card';
 import {CardGroup} from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router-dom";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
-function Cards() {
+function Cards(props) {
     return (
         <>
-            <div>
-                <CardGroup>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
+
+                    {props.films.map((film,index)=>(
+                        <Card style={{ width: '18rem', backgroundColor: '#1C7293'}}>
+                        <Card.Img variant="top" src={film.image}/>
+                        <Card.Body styles={{ }}>
+                            <Card.Title styles={{textAlign: 'center'}}>{film.title}</Card.Title>
+                            <Link to ='/details' state={{film:film}}><Button variant="primary" >Strona filmu</Button></Link>
                         </Card.Body>
-                    </Card>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                </CardGroup>
-                <CardGroup>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('./batman.jpg')}/>
-                        <Card.Body>
-                            <Card.Title>The Batman</Card.Title>
-                            <Card.Text>
-                                He is The Batman
-                            </Card.Text>
-                            <Button variant="primary" href="/details">Strona filmu</Button>
-                        </Card.Body>
-                    </Card>
-                </CardGroup>
+                    </Card>))}
 
 
-            </div>
         </>
     );
 }

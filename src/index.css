@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.home {
+  background-color: #9EB3C2;
+}
+
+.card {
+  background-color: #9EB3C2;
+  text-align: center;
+}
+.foot {
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+}
+

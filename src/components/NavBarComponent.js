@@ -4,7 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
+import {isExpired} from "react-jwt";
 function NavBarComponent() {
+    const isNotLogged = isExpired(localStorage.getItem('token'));
+
+
     return (
         <>
             <div>
@@ -26,23 +30,18 @@ function NavBarComponent() {
                                 style={{maxHeight: '100px'}}
                                 navbarScroll
                             >
-                                <Form className="d-flex">
-                                    <Form.Control
-                                        type="search"
-                                        placeholder="Szukaj"
-                                        className="mx-auto order-0"
-                                        aria-label="Szukaj"
-                                    />
-                                    <Button variant="outline-success">Szukaj</Button>
-                                </Form>
+
                             </Nav>
                             <Nav
                                 className="nav navbar-nav navbar-right"
                                 style={{maxHeight: '100px'}}
                                 navbarScroll
                             >
-                                <Nav.Link href="/signin">Logowanie</Nav.Link>
-                                <Nav.Link href="/signup">Rejestracja</Nav.Link>
+                                {isNotLogged &&
+                                <Nav.Link href="/signin">Logowanie</Nav.Link>}
+                                {isNotLogged &&
+                                    <Nav.Link href="/signup">Rejestracja</Nav.Link>}
+                                {!isNotLogged && <Nav.Link onClick={() => {localStorage.removeItem('token'); window.location.href = "/";}}  to="/">Wyloguj się</Nav.Link>}
 
                             </Nav>
                         </Navbar.Collapse>
