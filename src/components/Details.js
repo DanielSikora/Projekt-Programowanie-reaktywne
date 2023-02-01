@@ -20,17 +20,17 @@ function Details(props) {
     }
 
     return (
-        <div>
+
+    <div>
         <NavBarComponent></NavBarComponent>
-        <div className={'home'}>
-            <h1>{film.title}</h1>
+        <h1>{film.title}</h1>
             <img src={film.image} style={{height: '350px', width: '300px'}}/>
             <p>{film.content}</p>
-
             {(!isNotLogged && user["isAdmin"])&& <Button style={{width: "10rem", margin: "1rem"}} onClick={() => {deleteMovie()}} className="mb-4">Usuń</Button>}
-        </div>
         <Footer></Footer>
-        </div>
+
+    </div>
+
     );
 }
 

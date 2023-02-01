@@ -23,7 +23,7 @@ function Login() {
             <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
             <MDBBtn className="mb-4" onClick={()=>{signIn()}}>Zaloguj</MDBBtn>
         </MDBContainer>
-            <Footer className={}></Footer>
+            <Footer}></Footer>
         </div>
     );
 }

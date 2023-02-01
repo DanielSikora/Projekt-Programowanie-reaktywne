@@ -4,6 +4,7 @@ import {MDBBtn, MDBContainer, MDBInput} from "mdb-react-ui-kit";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import Footer from "./Footer";
 
 function AddFilm() {
     const navigate = useNavigate()
@@ -31,8 +32,9 @@ function AddFilm() {
 
 
                 </MDBContainer>
-                <footer></footer>
+                <Footer></Footer>
             </div>
+
         </>
     );
 }
