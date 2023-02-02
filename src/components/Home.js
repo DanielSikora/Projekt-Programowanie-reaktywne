@@ -24,12 +24,11 @@ function Home() {
     return (
         <>
 
-
+            <NavBarComponent></NavBarComponent>
             <div className={'home'}>
-                <NavBarComponent></NavBarComponent>
                 <Cards films={films} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}></Cards>
-                <Footer></Footer>
             </div>
+            <Footer></Footer>
 
 
         </>
