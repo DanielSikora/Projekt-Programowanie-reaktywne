@@ -21,6 +21,7 @@ function Login() {
     return (
         <div className="default">
             <NavBarComponent></NavBarComponent>
+            <div className="default2">
             <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
                 <MDBInput wrapperClass='mb-4' label='Login' id='form1' type='text' value={login}
                           onChange={e => setLogin(e.target.value)}/>
@@ -30,6 +31,7 @@ function Login() {
                     signIn()
                 }}>Zaloguj</MDBBtn>
             </MDBContainer>
+            </div>
             <Footer></Footer>
         </div>
     );

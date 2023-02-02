@@ -22,6 +22,7 @@ function AddFilm() {
         <>
             <div className="default">
                 <NavBarComponent></NavBarComponent>
+                <div className="default2">
                 <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
                     <MDBInput wrapperClass='mb-4' label='Tytuł' id='form1' type='text' value={title}
@@ -38,6 +39,7 @@ function AddFilm() {
 
 
                 </MDBContainer>
+                    </div>
                 <Footer></Footer>
             </div>
 

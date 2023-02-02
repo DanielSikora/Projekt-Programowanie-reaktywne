@@ -31,6 +31,7 @@ function Register() {
     return (
         <div className="default">
             <NavBarComponent></NavBarComponent>
+            <div className="default2">
             <MDBContainer fluid>
 
                 <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
@@ -74,6 +75,7 @@ function Register() {
                 </MDBCard>
 
             </MDBContainer>
+            </div>
             <Footer></Footer>
         </div>
     );
