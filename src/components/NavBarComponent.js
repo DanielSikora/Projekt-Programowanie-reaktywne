@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import {isExpired} from "react-jwt";
+
 function NavBarComponent() {
     const isNotLogged = isExpired(localStorage.getItem('token'));
 
@@ -38,10 +39,13 @@ function NavBarComponent() {
                                 navbarScroll
                             >
                                 {isNotLogged &&
-                                <Nav.Link href="/signin">Logowanie</Nav.Link>}
+                                    <Nav.Link href="/signin">Logowanie</Nav.Link>}
                                 {isNotLogged &&
                                     <Nav.Link href="/signup">Rejestracja</Nav.Link>}
-                                {!isNotLogged && <Nav.Link onClick={() => {localStorage.removeItem('token'); window.location.href = "/";}}  to="/">Wyloguj się</Nav.Link>}
+                                {!isNotLogged && <Nav.Link onClick={() => {
+                                    localStorage.removeItem('token');
+                                    window.location.href = "/";
+                                }} to="/">Wyloguj się</Nav.Link>}
 
                             </Nav>
                         </Navbar.Collapse>

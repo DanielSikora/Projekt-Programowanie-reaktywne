@@ -4,31 +4,32 @@ import Cards from "./Cards";
 import Footer from "./Footer";
 import {useEffect, useState} from "react";
 import axios from "axios";
+
 function Home() {
 
 
-
-    const [films,setFilms]= useState([])
-    const getFilms = ()=>{
+    const [films, setFilms] = useState([])
+    const getFilms = () => {
         axios.get('https://at.usermd.net/api/movies')
-            .then((restore)=>{setFilms(restore.data)})
+            .then((restore) => {
+                setFilms(restore.data)
+            })
     }
 
-    useEffect(()=>{getFilms()},[])
-
-
-
+    useEffect(() => {
+        getFilms()
+    }, [])
 
 
     return (
         <>
 
 
-                <div className={'home'}>
+            <div className={'home'}>
                 <NavBarComponent></NavBarComponent>
-                <Cards films={films} style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}></Cards>
+                <Cards films={films} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}></Cards>
                 <Footer></Footer>
-                </div>
+            </div>
 
 
         </>

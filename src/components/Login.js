@@ -9,21 +9,28 @@ import Footer from "./Footer";
 function Login() {
 
     const navigate = useNavigate()
-    const [login,setLogin]= useState("")
-    const [password,setPassword]= useState("")
-    const signIn = ()=>{
-        axios.post('https://at.usermd.net/api/user/auth',{login:login,password:password})
-            .then((restore)=>{localStorage.setItem("token", restore.data["token"]);window.location.href="/"})
+    const [login, setLogin] = useState("")
+    const [password, setPassword] = useState("")
+    const signIn = () => {
+        axios.post('https://at.usermd.net/api/user/auth', {login: login, password: password})
+            .then((restore) => {
+                localStorage.setItem("token", restore.data["token"]);
+                window.location.href = "/"
+            })
     }
     return (
-        <div>
+        <div className="default">
             <NavBarComponent></NavBarComponent>
-        <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
-            <MDBInput wrapperClass='mb-4' label='Login' id='form1' type='text' value={login} onChange={e => setLogin(e.target.value)}/>
-            <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
-            <MDBBtn className="mb-4" onClick={()=>{signIn()}}>Zaloguj</MDBBtn>
-        </MDBContainer>
-            <Footer}></Footer>
+            <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+                <MDBInput wrapperClass='mb-4' label='Login' id='form1' type='text' value={login}
+                          onChange={e => setLogin(e.target.value)}/>
+                <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password' value={password}
+                          onChange={e => setPassword(e.target.value)}/>
+                <MDBBtn className="mb-4" onClick={() => {
+                    signIn()
+                }}>Zaloguj</MDBBtn>
+            </MDBContainer>
+            <Footer></Footer>
         </div>
     );
 }

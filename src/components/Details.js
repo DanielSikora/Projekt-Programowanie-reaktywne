@@ -14,22 +14,29 @@ function Details(props) {
     const navigate = useNavigate();
     const location = useLocation();
     const film = location.state?.film;
-    const deleteMovie = ()=>{
-        axios.delete('https://at.usermd.net/api/movie/'+film.id)
-            .then((restore)=>{navigate("/")})
+    const deleteMovie = () => {
+        axios.delete('https://at.usermd.net/api/movie/' + film.id)
+            .then((restore) => {
+                navigate("/")
+            })
     }
 
     return (
 
-    <div>
-        <NavBarComponent></NavBarComponent>
-        <h1>{film.title}</h1>
-            <img src={film.image} style={{height: '350px', width: '300px'}}/>
-            <p>{film.content}</p>
-            {(!isNotLogged && user["isAdmin"])&& <Button style={{width: "10rem", margin: "1rem"}} onClick={() => {deleteMovie()}} className="mb-4">Usuń</Button>}
-        <Footer></Footer>
-
-    </div>
+        <div className="default">
+            <NavBarComponent></NavBarComponent>
+            <h1 style={{textAlign: 'center'}}>{film.title}</h1>
+            <div style={{textAlign: 'center'}}>
+                <img src={film.image} style={{height: '350px', width: '300px'}}/>
+            </div>
+            <div style={{textAlign: 'center'}}>
+                <p>{film.content}</p>
+                {(!isNotLogged && user["isAdmin"]) && <Button style={{width: "10rem", margin: "1rem"}} onClick={() => {
+                    deleteMovie()
+                }} className="mb-4">Usuń</Button>}
+            </div>
+            <Footer></Footer>
+        </div>
 
     );
 }

@@ -8,27 +8,33 @@ import Footer from "./Footer";
 
 function AddFilm() {
     const navigate = useNavigate()
-    const [title,setTitle]= useState("")
-    const [description,setDescription]= useState("")
-    const [image,setImage]= useState("")
-    const addFilms = ()=>{
-        axios.post('https://at.usermd.net/api/movies',{title:title,content:description,image:image})
-            .then((restore)=>{navigate("/")})
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
+    const [image, setImage] = useState("")
+    const addFilms = () => {
+        axios.post('https://at.usermd.net/api/movies', {title: title, content: description, image: image})
+            .then((restore) => {
+                navigate("/")
+            })
     }
 
     return (
         <>
-            <div>
+            <div className="default">
                 <NavBarComponent></NavBarComponent>
                 <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
-                    <MDBInput wrapperClass='mb-4' label='Tytuł' id='form1' type='text' value={title} onChange={e => setTitle(e.target.value)}/>
-                    <MDBInput wrapperClass='mb-4' label='Opis' id='form2' type='textarea' value={description} onChange={e => setDescription(e.target.value)}/>
-                    <MDBInput wrapperClass='mb-4' label='Adres zdjęcia' id='form3' type='text' value={image} onChange={e => setImage(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Tytuł' id='form1' type='text' value={title}
+                              onChange={e => setTitle(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Opis' id='form2' type='textarea' value={description}
+                              onChange={e => setDescription(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Adres zdjęcia' id='form3' type='text' value={image}
+                              onChange={e => setImage(e.target.value)}/>
 
 
-                    <MDBBtn className="mb-4" onClick={()=>{addFilms()}}>Dodaj film</MDBBtn>
-
+                    <MDBBtn className="mb-4" onClick={() => {
+                        addFilms()
+                    }}>Dodaj film</MDBBtn>
 
 
                 </MDBContainer>
