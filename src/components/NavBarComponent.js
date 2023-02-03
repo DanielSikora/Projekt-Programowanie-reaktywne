@@ -24,7 +24,9 @@ function NavBarComponent() {
                                 navbarScroll
                             >
                                 <Nav.Link href="/">Strona główna</Nav.Link>
-                                <Nav.Link href="/add">Dodaj film</Nav.Link>
+                                {!isNotLogged && <Nav.Link onClick={() => {
+                                    window.location.href = "/add";
+                                }} to="/">Dodaj film</Nav.Link>}
                             </Nav>
                             <Nav
                                 className="mx-auto order-0"

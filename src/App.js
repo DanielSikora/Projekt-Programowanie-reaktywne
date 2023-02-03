@@ -7,9 +7,8 @@ import Register from "./components/Register";
 import AddFilm from "./components/AddFilm";
 import React from "react";
 import Details from "./components/Details";
-import {isExpired} from "react-jwt";
+import {decodeToken, isExpired} from "react-jwt";
 function App() {
-
     return (
         <>
             <Routes>
