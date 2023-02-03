@@ -32,10 +32,10 @@ function Register() {
         <div className="default">
             <NavBarComponent></NavBarComponent>
             <div className="default2">
-            <MDBContainer fluid>
+            <MDBContainer>
 
                 <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
-                    <MDBCardBody>
+
                         <MDBRow>
                             <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>
 
@@ -71,7 +71,7 @@ function Register() {
                                     fluid/>
                             </MDBCol>
                         </MDBRow>
-                    </MDBCardBody>
+
                 </MDBCard>
 
             </MDBContainer>

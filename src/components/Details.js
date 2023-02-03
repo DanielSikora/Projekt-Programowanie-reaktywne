@@ -25,10 +25,10 @@ function Details(props) {
 
         <div className="default">
             <NavBarComponent></NavBarComponent>
-            <div style={{width: '100%', height: '92.3%', backgroundColor: '#1C7293'}}>
+            <div style={{width: '100%', height: '97.3%', backgroundColor: '#1C7293'}}>
             <h1 style={{textAlign: 'center'}}>{film.title}</h1>
             <div style={{textAlign: 'center'}}>
-                <img src={film.image} style={{height: '400px', width: '300px'}}/>
+                <img src={film.image} style={{height: '350px', width: '300px'}}/>
             </div>
             <div style={{textAlign: 'center'}}>
                 <p>{film.content}</p>
