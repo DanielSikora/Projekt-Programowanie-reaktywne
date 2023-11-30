@@ -27,8 +27,9 @@ function Home() {
             <NavBarComponent></NavBarComponent>
             <div className={'home'}>
                 <Cards films={films} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}></Cards>
+                <Footer></Footer>
             </div>
-            <Footer></Footer>
+            
 
 
         </>

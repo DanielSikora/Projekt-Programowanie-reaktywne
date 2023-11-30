@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBarComponent from "./NavBarComponent";
-import {MDBBtn, MDBContainer, MDBInput} from "mdb-react-ui-kit";
+import {MDBBtn, MDBContainer, MDBInput, MDBTextArea} from "mdb-react-ui-kit";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
@@ -22,7 +22,7 @@ function AddFilm() {
 
 
     const addFilms = () => {
-        axios.post('http://localhost:3001/api/posts', {title: title, image: image, content: text, ytLink: ytLink, author: author, relaseDate: relaseDate })
+        axios.post('http://localhost:3001/api/posts', {title: title, image: image, text: text, ytLink: ytLink, author: author, relaseDate: relaseDate })
             .then((restore) => {
                 navigate("/")
             })
@@ -39,7 +39,7 @@ function AddFilm() {
                               onChange={e => setTitle(e.target.value)}/>
                     <MDBInput wrapperClass='mb-4' label='Adres zdjęcia okładki' id='form2' type='textarea' value={image}
                               onChange={e => setImage(e.target.value)}/>
-                    <MDBInput wrapperClass='mb-4' label='Tekst utworu' id='form3' type='text' value={text}
+                    <MDBTextArea wrapperClass='mb-4' label='Tekst piosenki' id='form3' type='textarea' rows={20} value={text}
                               onChange={e => setText(e.target.value)}/>
                     <MDBInput wrapperClass='mb-4' label='Link do piosenki na yt' id='form4' type='text' value={ytLink}
                               onChange={e => setYtLink(e.target.value)}/>
