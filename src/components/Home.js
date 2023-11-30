@@ -10,7 +10,7 @@ function Home() {
 
     const [films, setFilms] = useState([])
     const getFilms = () => {
-        axios.get('https://at.usermd.net/api/movies')
+        axios.get('http://localhost:3001/api/posts')
             .then((restore) => {
                 setFilms(restore.data)
             })

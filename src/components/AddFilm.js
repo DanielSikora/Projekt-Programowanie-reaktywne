@@ -9,10 +9,20 @@ import Footer from "./Footer";
 function AddFilm() {
     const navigate = useNavigate()
     const [title, setTitle] = useState("")
-    const [description, setDescription] = useState("")
     const [image, setImage] = useState("")
+    const [text, setText] = useState("")
+    const [ytLink, setYtLink] = useState("")
+    const [author, setAuthor] = useState("")
+    const [relaseDate, setRelaseDate] = useState("")
+
+
+
+
+
+
+
     const addFilms = () => {
-        axios.post('https://at.usermd.net/api/movies', {title: title, content: description, image: image})
+        axios.post('http://localhost:3001/api/posts', {title: title, image: image, content: text, ytLink: ytLink, author: author, relaseDate: relaseDate })
             .then((restore) => {
                 navigate("/")
             })
@@ -27,10 +37,16 @@ function AddFilm() {
 
                     <MDBInput wrapperClass='mb-4' label='Tytuł' id='form1' type='text' value={title}
                               onChange={e => setTitle(e.target.value)}/>
-                    <MDBInput wrapperClass='mb-4' label='Opis' id='form2' type='textarea' value={description}
-                              onChange={e => setDescription(e.target.value)}/>
-                    <MDBInput wrapperClass='mb-4' label='Adres zdjęcia' id='form3' type='text' value={image}
+                    <MDBInput wrapperClass='mb-4' label='Adres zdjęcia okładki' id='form2' type='textarea' value={image}
                               onChange={e => setImage(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Tekst utworu' id='form3' type='text' value={text}
+                              onChange={e => setText(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Link do piosenki na yt' id='form4' type='text' value={ytLink}
+                              onChange={e => setYtLink(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Autor piosenki' id='form5' type='text' value={author}
+                              onChange={e => setAuthor(e.target.value)}/>
+                    <MDBInput wrapperClass='mb-4' label='Data wydania' id='form6' type='text' value={relaseDate}
+                              onChange={e => setRelaseDate(e.target.value)}/>
 
 
                     <MDBBtn className="mb-4" onClick={() => {

@@ -22,7 +22,7 @@ function Register() {
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
     const signUp = () => {
-        axios.post('https://at.usermd.net/api/user/create', {name: login, password: password, email: email})
+        axios.post('http://localhost:3001/api/user/create', {name: login, password: password, email: email})
             .then((restore) => {
                 navigate("/signin")
             })

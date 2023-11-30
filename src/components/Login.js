@@ -12,7 +12,7 @@ function Login() {
     const [login, setLogin] = useState("")
     const [password, setPassword] = useState("")
     const signIn = () => {
-        axios.post('https://at.usermd.net/api/user/auth', {login: login, password: password})
+        axios.post('http://localhost:3001/api/user/auth', {login: login, password: password})
             .then((restore) => {
                 localStorage.setItem("token", restore.data["token"]);
                 window.location.href = "/"
