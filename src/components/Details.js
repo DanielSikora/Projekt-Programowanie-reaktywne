@@ -23,38 +23,33 @@ function Details(props) {
     }
 
     return (
-
         <div className="default">
             <NavBarComponent></NavBarComponent>
-            <div style={{width: '100%', height: '97.3%', backgroundColor: '#1C7293'}}>
-            <h1 style={{textAlign: 'center'}}>{film.title}</h1>
-            <div className="tile-container" style={{ width: '400px', height: '400px' }}>
-      <ReactPlayer
-        className="yt"
-        url={film.ytLink}
-        width="100%"
-        height="100%"
-        controls={true}
-      />
-    </div>
-            <div style={{textAlign: 'center'}}>
-                <img src={film.image} style={{height: '350px', width: '300px'}}/>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-            {textLines.map((line, index) => (<p key={index}>{line}</p>))}
-            </div>
-            <div style={{textAlign: 'center'}}>
-                
-        
-     
-                {(!isNotLogged && user["isAdmin"]) && <Button style={{width: "10rem", margin: "1rem"}} onClick={() => {
-                    deleteMovie()
-                }} className="mb-4">Usuń</Button>}
-            </div>
+            <div style={{ width: '100%', height: '97.3%', backgroundColor: '#1C7293', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <h1 style={{ textAlign: 'center' }}>{film.title}</h1>
+                <div className="tile-container" style={{ width: '400px', height: '400px', margin: '1rem' }}>
+                    <ReactPlayer
+                        className="yt"
+                        url={film.ytLink}
+                        width="100%"
+                        height="100%"
+                        controls={true}
+                    />
+                </div>
+                <div style={{ textAlign: 'center', margin: '1rem' }}>
+                    <img src={film.image} style={{ height: '250px', width: '200px' }} alt={film.title} />
+                </div>
+                <div style={{ textAlign: 'center', margin: '1rem' }}>
+                    {textLines.map((line, index) => (<p key={index}>{line}</p>))}
+                </div>
+                <div style={{ textAlign: 'center', margin: '1rem', marginBottom: '4rem' }}>
+                    {(!isNotLogged && user["isAdmin"]) && <Button style={{ width: "10rem", margin: "1rem 0" }} onClick={() => {
+                        deleteMovie()
+                    }} className="mb-4">Usuń</Button>}
+                </div>
             </div>
             <Footer></Footer>
         </div>
-
     );
 }
 
